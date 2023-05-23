@@ -7,6 +7,7 @@ if [ "$EUID" -ne 0 ]
 fi
 
 apt install dnsmasq hostapd
+systemctl unmask hostapd
 
 echo "Enabling PenguinPi Static Hotspot"
 
@@ -16,7 +17,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd ) 
 cp $SCRIPT_DIR/setup-pi-network /etc/init.d/  #Copy initial setup script
 cp $SCRIPT_DIR/hostapd.conf /etc/hostapd/ #Copy hostapd config
 cp $SCRIPT_DIR/penguin.conf /etc/dnsmasq.d/ #Copy dnsmasq config
-cp $SCRIPT_DIR/hotspot /etc/interfaces.d/ #Copy interfaces.d
+cp $SCRIPT_DIR/hotspot /etc/network/interfaces.d/ #Copy interfaces.d
 cp $SCRIPT_DIR/70-persistent-net.rules /etc/udev/rules.d/
 
 MAC=$(cat /sys/class/net/wlan0/address)

@@ -11,6 +11,8 @@ echo "Disabling PenguinPi Static Hotspot"
 systemctl stop hostapd
 systemctl stop dnsmasq
 
+systemctl mask hostapd
+
 sed -i 's/PenguinPi/raspberrypi/g' /etc/hosts
 echo 'raspberrypi' > /etc/hostname
 
@@ -22,7 +24,7 @@ sed -i -r 's/DAEMON_CONF="\/etc\/hostapd\/hostapd.conf"//g' /etc/default/hostapd
 sed -i -r 's/(conf-dir=\/etc\/dnsmasq.d\/,\*.conf)/#\1/g' /etc/dnsmasq.conf
 
 ln -s /dev/null /etc/systemd/system/hostapd.service
-systemctl start hostapd
+
 systemctl start dnsmasq
 
 echo "Removed!"
