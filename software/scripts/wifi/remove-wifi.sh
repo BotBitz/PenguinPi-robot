@@ -25,6 +25,13 @@ sed -i -r 's/(conf-dir=\/etc\/dnsmasq.d\/,\*.conf)/#\1/g' /etc/dnsmasq.conf
 
 ln -s /dev/null /etc/systemd/system/hostapd.service
 
+rm /etc/init.d/setup-pi-network   #Copy initial setup script
+rm /etc/hostapd/hostapd.conf #Copy hostapd config
+rm /etc/dnsmasq.d/penguin.conf #Copy dnsmasq config
+rm /etc/network/interfaces.d/hotspot #Copy interfaces.d
+rm /etc/udev/rules.d/70-persistent-net.rules
+
+
 systemctl start dnsmasq
 
 echo "Removed!"
