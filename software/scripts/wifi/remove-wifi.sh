@@ -31,7 +31,6 @@ rm /etc/dnsmasq.d/penguin.conf #Copy dnsmasq config
 rm /etc/network/interfaces.d/hotspot #Copy interfaces.d
 rm /etc/udev/rules.d/70-persistent-net.rules
 
-
 systemctl start dnsmasq
 
-echo "Removed!"
+echo "Removed! Reboot now"
