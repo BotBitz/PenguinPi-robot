@@ -17,6 +17,10 @@ EOF
 service network-manager start
 
 MAC=$(cat /sys/class/net/wlan0/address)
+if [ -z "$var" ]
+then
+    MAC=$(cat /sys/class/net/wlan1/address)
+fi
 
 sed -i "s/XX:XX:XX:XX:XX:XX/$MAC/g" /etc/udev/rules.d/70-persistent-net.rules
 
