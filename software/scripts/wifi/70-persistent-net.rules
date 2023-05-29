@@ -1,1 +1,2 @@
+SUBSYSTEM=="net", ACTION=="add", ATTRS{idVendor}=="2357", NAME="usbwlan0"
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="XX:XX:XX:XX:XX:XX", NAME="wlan0"
