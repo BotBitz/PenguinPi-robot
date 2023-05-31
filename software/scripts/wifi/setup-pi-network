@@ -38,3 +38,5 @@ sed -i "s/$SEARCH/$REPLACE/g" /etc/hostapd/hostapd.conf
 
 systemctl disable setup-pi-network
 service hostapd start
+
+reboot now

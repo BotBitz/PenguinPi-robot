@@ -40,4 +40,8 @@ sed -i -r 's/#(conf-dir=\/etc\/dnsmasq.d\/,\*.conf)/\1/g' /etc/dnsmasq.conf
 service dnsmasq start
 service hostapd start
 
-echo "Enabled"
+echo "Enabled. Restarting"
+
+sleep 5
+
+reboot now
