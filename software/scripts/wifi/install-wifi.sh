@@ -20,8 +20,6 @@ cp $SCRIPT_DIR/penguin.conf /etc/dnsmasq.d/ #Copy dnsmasq config
 cp $SCRIPT_DIR/hotspot /etc/network/interfaces.d/ #Copy interfaces.d
 cp $SCRIPT_DIR/70-persistent-net.rules /etc/udev/rules.d/
 
-MAC=$(cat /sys/class/net/wlan0/address)
-
 ln -sf /lib/systemd/resolv.conf /etc/resolv.conf
 
 service hostapd stop 
