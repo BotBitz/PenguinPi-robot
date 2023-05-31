@@ -18,7 +18,7 @@ cp $SCRIPT_DIR/setup-pi-network /etc/init.d/  #Copy initial setup script
 cp $SCRIPT_DIR/hostapd.conf /etc/hostapd/ #Copy hostapd config
 cp $SCRIPT_DIR/penguin.conf /etc/dnsmasq.d/ #Copy dnsmasq config
 cp $SCRIPT_DIR/hotspot /etc/network/interfaces.d/ #Copy interfaces.d
-cp $SCRIPT_DIR/70-persistent-net.rules /etc/udev/rules.d/
+cp $SCRIPT_DIR/99-persistent-net.rules /etc/udev/rules.d/
 
 ln -sf /lib/systemd/resolv.conf /etc/resolv.conf
 
